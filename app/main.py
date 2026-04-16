@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT_DIR))
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 
 from app.schemas import HealthResponse, InfoResponse, PredictRequest, PredictResponse
 from src.predict import get_supported_genres, is_model_loaded, predict
@@ -61,20 +62,13 @@ async def startup_event():
 # Endpoints
 # ──────────────────────────────────────────
 
-@app.get("/", response_model=InfoResponse, tags=["Info"])
+@app.get("/", tags=["UI"])
 def root():
-    """Info dasar tentang API."""
-    return InfoResponse(
-        name="Movie Genre Prediction API",
-        version="1.0.0",
-        description="Prediksi genre film dari sinopsis menggunakan TF-IDF + LinearSVC.",
-        endpoints={
-            "POST /predict": "Prediksi genre dari teks overview",
-            "GET /health": "Cek status model",
-            "GET /genres": "Daftar genre yang didukung",
-            "GET /docs": "Swagger UI dokumentasi",
-        },
-    )
+    """Halaman Utama antarmuka AI (Web UI)."""
+    ui_path = Path(__file__).parent / "index.html"
+    if ui_path.exists():
+        return FileResponse(ui_path)
+    return {"error": "UI file (index.html) not found"}
 
 
 @app.get("/health", response_model=HealthResponse, tags=["Info"])
