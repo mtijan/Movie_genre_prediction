@@ -1,0 +1,41 @@
+# Version control
+.git
+.gitignore
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Jupyter Notebooks
+notebooks/
+*.ipynb
+.ipynb_checkpoints/
+
+# MLflow (tidak perlu di container)
+mlruns/
+mlflow.db
+
+# Data files (besar, tidak perlu di container)
+data/
+
+# Root vectorizer (duplikat dari models/)
+vectorizer.pkl
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Docs
+README.md
+*.md
