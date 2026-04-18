@@ -1,8 +1,8 @@
-# 🎬 Movie Genre Prediction - End-to-End ML Production
+# Movie Genre Prediction - End-to-End ML Production
 
 Proyek ini adalah implementasi sistem AI *End-to-End* untuk memprediksi genre film berdasarkan teks sinopsis (overview). Proyek ini dibangun untuk memenuhi persyaratan tugas akhir bootcamp **AI System Project (End-to-End ML Production)**.
 
-## 📋 Fitur & Komponen Project (Sesuai Rubrik)
+## Fitur & Komponen Project (Sesuai Rubrik)
 
 1. **Data Versioning**: Pengelolaan dataset menggunakan `DVC` (Data Version Control). Data disimpan di folder `data/` (diabaikan oleh Git, dikelola oleh DVC).
 2. **Model Versioning**: Pelacakan eksperimen dan model menggunakan `MLflow`. Semua hiperparameter, metrik, dan artifak model tersimpan dengan rapi.
@@ -12,7 +12,7 @@ Proyek ini adalah implementasi sistem AI *End-to-End* untuk memprediksi genre fi
 
 ---
 
-## 🛠️ Persiapan Lingkungan (Setup Lingkungan Lokal)
+## Persiapan Lingkungan (Setup Lingkungan Lokal)
 
 Pastikan Anda sudah menginstal Python (disarankan 3.10+), Git, dan Docker di komputer Anda.
 
@@ -42,7 +42,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 Cara Menjalankan AI System
+## Cara Menjalankan AI System
 
 ### Langkah 1: Pelatihan & Rekam Model (MLflow)
 Langkah pertama adalah melatih model. Model yang digunakan adalah `LinearSVC` dipadu dengan `TF-IDF Vectorizer`. Proses ini akan otomatis terekam oleh MLflow.
@@ -109,7 +109,7 @@ docker push username_anda/movie-genre-api:v1.0
 
 ---
 
-## 📌 Checklist Implementasi Tugas
+## Checklist Implementasi Tugas
 
 - [x] **Data Versioning:** Folder data sudah diabaikan di `.gitignore`. Disarankan untuk menginstal DVC (`pip install dvc dvc-s3/dvc-gdrive`) dan menjalankan: `dvc init`, `dvc add data/movies.csv`, lalu `git add data/movies.csv.dvc`.
 - [x] **Model Versioning:** Sudah menggunakan MLflow (lihat skrip `src/train.py`).
@@ -119,7 +119,7 @@ docker push username_anda/movie-genre-api:v1.0
 
 ---
 
-## 🏗️ Struktur Folder
+## Struktur Folder
 ```text
 Movie_genre_prediction/
 ├── app/
